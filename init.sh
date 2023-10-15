@@ -1,5 +1,13 @@
 #!/bin/bash
 
+
+# PS1 
+
+echo "PS1 ? " ;  read ans ; 
+if [ "$(echo $ans)" == "Y" ] ; then 
+    ps="\033[45m \w \033[46m\033[35m\033[37m \t \033[0m\033[36m\033[0m"
+    echo $ps  >> ~/.bashrc ;
+fi
 echo -ne "\tHola $USER  :D " 
 #sleep 2 ; 
 echo -e "\r\tInstalando algunos paquetes necesarios para el entorno de linux :D" 
@@ -10,7 +18,7 @@ clear ;
 
 
 #programas necesarios 
-programs=(curl wget fim git) 
+programs=(curl wget fim git clang) 
 
 echo 
 for program in "${programs[@]}"  ; do
